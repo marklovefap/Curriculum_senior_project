@@ -8,3 +8,4 @@ export const ADVISOR_TEST_TOKEN = 'ndjfkheiofjoidkfl;la;vdjkvb'
 export const CMU_AUTH_URL=`https://oauth.cmu.ac.th/v1/Authorize.aspx?response_type=code&client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.CALLBACK_URL}&scope=cmuitaccount.basicinfo&state=xyz`
 export const CMU_DATA_URL="https://misapi.cmu.ac.th/cmuitaccount/v1/api/cmuitaccount/basicinfo"
 export const PORT = process.env.PORT || 3000
+export const mongo_url = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0.gxnkxvr.mongodb.net/project?retryWrites=true&w=majority`

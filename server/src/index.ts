@@ -8,7 +8,7 @@ import { createServer} from "http";
 import schema from './graphql/schema'
 import cookieParser from 'cookie-parser'
 import { verify } from "jsonwebtoken";
-import { ADMIN_TOKEN, ADVISOR_TEST_TOKEN, ADVISOR_TOKEN, CMU_AUTH_URL, PORT, USER_TOKEN } from "./constants";
+import { ADMIN_TOKEN, ADVISOR_TEST_TOKEN, ADVISOR_TOKEN, CMU_AUTH_URL, mongo_url, PORT, USER_TOKEN } from "./constants";
 import cors from 'cors'
 import { getData, getToken } from './helper/auth';
 import { sign } from "jsonwebtoken"
@@ -19,7 +19,7 @@ import Info from './model/sInfo.model'
 import { hashId } from './helper/getData';
 import { createAdOauth, findAd } from './services/advisor.service';
 
-mongoose.connect('mongodb+srv://superuser:tHd3hGis5LAA3Yge@cluster0.gxnkxvr.mongodb.net/project?retryWrites=true&w=majority')
+mongoose.connect(mongo_url)
         .then(() => {
             console.log("DB CONNECTED")
             startServer()
